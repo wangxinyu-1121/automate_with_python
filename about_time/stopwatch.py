@@ -8,6 +8,26 @@ import sys, time
 
 
 def func():
+    print("回车开始，回车计时，ctrl+c退出")
+    input()
+    print("开始计时")
+    start_time = time.time()
+    end_time = start_time
+    lap_num = 1
+    try:
+        while True:
+            input()
+            lap_time = round(time.time() - end_time, 3)
+            total_time = round(time.time() - start_time, 3)
+            print(f"圈数：{lap_num}\n单圈时间：{lap_time}\n整体时间：{total_time}")
+            lap_num += 1
+            end_time = time.time()
+    except Exception as e:
+        print(e)
+        print("退出")
+
+
+def func1():
     """超级秒表"""
     start_time = 0
     end_time = 0
